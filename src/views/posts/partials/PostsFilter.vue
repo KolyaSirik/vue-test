@@ -18,9 +18,9 @@
 
 <script>
 export default {
-  props: [
-    'authors',
-    'userId',
-  ],
+  props: {
+    authors: Array,
+    userId: String,
+  },
 };
 </script>

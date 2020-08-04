@@ -1,18 +1,20 @@
 // eslint-disable-next-line import/extensions
 import axios from '@/api/index.js';
+// eslint-disable-next-line no-unused-vars
+import * as types from '../../mutation-types';
 
 export default {
   async register({ commit }, data) {
     await axios.post('/auth', data)
       .then((response) => {
         if (response.data.success) {
-          commit('SET_USER', response.data.user);
+          commit(types.SET_USER, response.data.user);
         }
       }).catch((error) => {
-        commit('SET_ERRORS', error.response.data.errors);
+        commit(types.SET_ERRORS, error.response.data.errors);
       });
   },
   logout({ commit }) {
-    commit('REMOVE_USER');
+    commit(types.REMOVE_USER);
   },
 };

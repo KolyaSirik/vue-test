@@ -1,10 +1,13 @@
+// eslint-disable-next-line no-unused-vars
+import * as types from '../../mutation-types';
+
 export default {
-  SET_POSTS(state, posts) {
+  [types.SET_POSTS](state, posts) {
     state.posts = posts.data;
     state.meta = posts.meta;
     state.authors = posts.authors;
   },
-  SET_POST(state, post) {
+  [types.SET_POST](state, post) {
     state.post = post;
   },
 };

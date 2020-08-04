@@ -1,12 +1,15 @@
+// eslint-disable-next-line no-unused-vars
+import * as types from '../../mutation-types';
+
 export default {
-  SET_USER(state, user) {
+  [types.SET_USER](state, user) {
     state.user = user;
     state.errors = null;
   },
-  REMOVE_USER(state) {
+  [types.REMOVE_USER](state) {
     state.user = null;
   },
-  SET_ERRORS(state, errors) {
+  [types.SET_ERRORS](state, errors) {
     state.user = null;
     state.errors = errors;
   },

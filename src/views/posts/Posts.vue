@@ -4,13 +4,13 @@
       :authors="authors"
       :userId="userId"
       :currentPath="currentPath"
-      v-on:filter-posts="filterPosts"
+      @filter-posts="filterPosts"
     />
 
     <posts-pagination
       :meta="meta"
       :perPage="perPage"
-      v-on:change-per-page="changePerPage"
+      @change-per-page="changePerPage"
     />
 
     <div class="card-columns" v-if="posts.length">
@@ -49,7 +49,7 @@ export default {
   data() {
     return {
       posts: [],
-      meta: [],
+      meta: {},
       authors: [],
       perPage: 10,
       userId: '',

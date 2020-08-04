@@ -97,10 +97,10 @@ export default {
       return pagesToShow;
     },
   },
-  props: [
-    'meta',
-    'perPage',
-    'currentPath',
-  ],
+  props: {
+    meta: Object,
+    perPage: Number,
+    currentPath: String,
+  },
 };
 </script>

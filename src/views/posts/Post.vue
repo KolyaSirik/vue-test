@@ -13,12 +13,14 @@ import router from '@/routes/index.js';
 export default {
   data() {
     return {
-      post: null,
+      post: {},
     };
   },
   async mounted() {
     if (!this.$store.getters['auth/user']) {
       router.push({ name: 'registration' });
+
+      return;
     }
 
     await this.$store.dispatch('posts/loadPost', this.$route.params.id);
